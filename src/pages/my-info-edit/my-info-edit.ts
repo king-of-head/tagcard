@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { DatabaseProvider } from "../../providers/database/database";
 
+
 /**
  * Generated class for the MyInfoEditPage page.
  *
@@ -15,12 +16,26 @@ import { DatabaseProvider } from "../../providers/database/database";
   templateUrl: 'my-info-edit.html',
 })
 export class MyInfoEditPage {
+	firstname: string;
+	lastname: string;
+	gender: string;
+	Location: string;
+	Status: string;
+	company: string;
+	school: string;
+	tags= [];
+
+
+
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public databaseProvider: DatabaseProvider) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad MyInfoEditPage');
+  }
+  addInfo(){
+
   }
 
 }

@@ -6,6 +6,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { IonicStorageModule } from '@ionic/storage';
 import { QRCodeModule } from 'angularx-qrcode';
 import { QRScanner, QRScannerStatus } from '@ionic-native/qr-scanner';
+import { FormsModule } from '@angular/forms';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
@@ -28,6 +29,7 @@ import { ToStringPipe } from '../pages/friend-string.pipe'
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     IonicModule.forRoot(MyApp),
     IonicStorageModule.forRoot(),
     QRCodeModule,
