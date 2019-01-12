@@ -28,14 +28,14 @@
 
         <ion-icon name="contact" item-start></ion-icon>
        <ion-label color="primary"> Name </ion-label>
-       <ion-input  placeholder="First Name" max="15"></ion-input>
+       <ion-input [(ngModel)]="firstname" placeholder="First Name" max="15"></ion-input>
      </ion-item>
    </ion-col>
    
    <ion-col>
     <ion-item>
     <ion-label color="primary"></ion-label>
-    <ion-input  placeholder="Last Name" max="15"></ion-input>
+    <ion-input  [(ngModel)]="lastname" placeholder="Last Name" max="15"></ion-input>
     </ion-item>
   </ion-col>
 
@@ -50,7 +50,6 @@
     <ion-option value="m">Male</ion-option>
   </ion-select>
 </ion-item>
-
 
 <ion-item>
   <ion-icon name="locate" item-start></ion-icon>
@@ -126,13 +125,13 @@
 
         <ion-icon name="briefcase" item-start></ion-icon>
        <ion-label color="primary"> Company </ion-label>
-       <ion-input placeholder="Company" max="20"></ion-input>
+       <ion-input [(ngModel)]="company" placeholder="Company" max="20"></ion-input>
      </ion-item>
      <ion-item>
 
         <ion-icon name="book" item-start></ion-icon>
        <ion-label color="primary"> School </ion-label>
-       <ion-input placeholder="School" max="20"></ion-input>
+       <ion-input [(ngModel)]="school" placeholder="School" max="20"></ion-input>
      </ion-item>
      
 <ion-item>
@@ -155,12 +154,7 @@
 </ion-item>
 
    
-     <ion-chip #chip1>
-  <ion-label>Default</ion-label>
-  <button ion-button clear color="light" (click)="delete(chip1)">
-    <ion-icon name="close-circle"></ion-icon>
-  </button>
-</ion-chip>
+ 
 </ion-content>
 
 <!--<style>
