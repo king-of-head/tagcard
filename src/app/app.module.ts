@@ -6,6 +6,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { IonicStorageModule } from '@ionic/storage';
 import { QRCodeModule } from 'angularx-qrcode';
 import { QRScanner, QRScannerStatus } from '@ionic-native/qr-scanner';
+import { FormsModule } from '@angular/forms';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
@@ -14,7 +15,7 @@ import { MyInfoEditPage } from '../pages/my-info-edit/my-info-edit';
 import { FriendsPage } from '../pages/friends/friends';
 import { ScannerPage } from '../pages/scanner/scanner';
 import { DatabaseProvider } from '../providers/database/database';
-
+import { RlTagInputModule } from 'angular2-tag-input';
 @NgModule({
   declarations: [
     MyApp,
@@ -26,7 +27,9 @@ import { DatabaseProvider } from '../providers/database/database';
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     IonicModule.forRoot(MyApp),
+    RlTagInputModule,
     IonicStorageModule.forRoot(),
     QRCodeModule,
   ],
