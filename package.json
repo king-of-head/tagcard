@@ -1,5 +1,5 @@
 {
-  "name": "tagcard",
+  "name": "main-page",
   "version": "0.0.1",
   "author": "Ionic Framework",
   "homepage": "http://ionicframework.com/",
@@ -25,6 +25,7 @@
     "@ionic-native/status-bar": "~4.18.0",
     "@ionic/pro": "2.0.4",
     "@ionic/storage": "^2.2.0",
+    "angularx-qrcode": "^1.1.7",
     "cordova-android": "7.1.4",
     "cordova-plugin-device": "^2.0.2",
     "cordova-plugin-ionic-keyboard": "^2.1.3",
@@ -42,7 +43,7 @@
     "@ionic/app-scripts": "3.2.1",
     "typescript": "~2.6.2"
   },
-  "description": "An Ionic project",
+  "description": "main page: An Ionic project",
   "cordova": {
     "plugins": {
       "cordova-plugin-whitelist": {},
@@ -58,4 +59,3 @@
       "android"
     ]
   }
-}

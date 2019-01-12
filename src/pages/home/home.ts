@@ -3,7 +3,9 @@ import { NavController } from 'ionic-angular';
 import { MyInfoPage } from '../my-info/my-info';
 import { MyInfoEditPage } from '../my-info-edit/my-info-edit';
 import { FriendsPage } from '../friends/friends';
+import { ScannerPage } from '..//scanner/scanner';
 import { DatabaseProvider } from "../../providers/database/database";
+import { QRCodeModule } from 'angularx-qrcode';
 
 @Component({
   selector: 'page-home',
@@ -11,8 +13,14 @@ import { DatabaseProvider } from "../../providers/database/database";
 
 })
 export class HomePage {
-
+  qrData: string;
   constructor(public navCtrl: NavController, public databaseProvider: DatabaseProvider) {  
+    this.qrData = `https://github.com/king-of-head/tagcard`
+  }
+
+
+  public gotoScanner() {
+    this.navCtrl.push(ScannerPage);
   }
 
   public gotoMyInfo() {
@@ -31,9 +39,9 @@ export class HomePage {
   }
 
   // If first time, goto myInfoEdit page
-  ngOnInit() {
-    if(!this.databaseProvider.myInfo) {
-      this.navCtrl.push(MyInfoEditPage);
-    }
+  async ngOnInit() {
+    // if(!this.databaseProvider.myInfo) {
+    //   this.navCtrl.push(MyInfoEditPage);
+    // }
   }
 }
