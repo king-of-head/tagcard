@@ -1,5 +1,5 @@
 {
-  "name": "main-page",
+  "name": "tagcard",
   "version": "0.0.1",
   "author": "Ionic Framework",
   "homepage": "http://ionicframework.com/",
@@ -46,7 +46,7 @@
     "@ionic/app-scripts": "3.2.1",
     "typescript": "~2.6.2"
   },
-  "description": "main page: An Ionic project",
+  "description": "tagcard",
   "cordova": {
     "plugins": {
       "cordova-plugin-whitelist": {},
@@ -61,15 +61,5 @@
     "platforms": [
       "android"
     ]
-  },
-  "cordovaPlugins": [
-    "cordova-plugin-console",
-    "cordova-plugin-device",
-    "cordova-plugin-splashscreen",
-    "cordova-plugin-whitelist",
-    "ionic-plugin-keyboard"
-  ],
-  "cordovaPlatforms": [
-    "ios"
-  ]
+  }
 }
