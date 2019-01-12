@@ -58,7 +58,6 @@
     "platforms": [
       "android"
     ]
-<<<<<<< HEAD
   },
   "cordovaPlugins": [
     "cordova-plugin-console",
@@ -70,7 +69,4 @@
   "cordovaPlatforms": [
     "ios"
   ]
-=======
-  }
->>>>>>> da6300603268de12b6494aea8bf5c5a5a4b58d8d
 }
