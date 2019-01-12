@@ -13,7 +13,9 @@ import { QRCodeModule } from 'angularx-qrcode';
 
 })
 export class HomePage {
-  qrData: string;
+  qrData: String;
+  friendStr: String;
+
   constructor(public navCtrl: NavController, public databaseProvider: DatabaseProvider) {  
     this.qrData = `https://github.com/king-of-head/tagcard`
   }
@@ -40,8 +42,10 @@ export class HomePage {
 
   // If first time, goto myInfoEdit page
   async ngOnInit() {
-    // if(!this.databaseProvider.myInfo) {
-    //   this.navCtrl.push(MyInfoEditPage);
-    // }
+    await this.databaseProvider.load();
+    if(!this.databaseProvider.myInfo) {
+      this.navCtrl.push(MyInfoEditPage);
+    }
+    this.friendStr = this.databaseProvider.toString();
   }
 }

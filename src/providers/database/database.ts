@@ -77,9 +77,7 @@ export class DatabaseProvider {
   public removeFriend(id) {
     this.friends = this.friends.filter(x => x.id != id);
     this.storage.set('friends', this.friends);
-  }
-  
-
+  } 
 
   public updateMyInfo(newInfo) {
     this.myInfo = newInfo;
@@ -88,6 +86,7 @@ export class DatabaseProvider {
 
 
   public fillFriend() {
+    console.log('FILL')
     this.addFriend({
       name: 'Ara',
       gender: 'male',
@@ -130,6 +129,15 @@ export class DatabaseProvider {
     this.friends = null;
     await this.storage.set('friends', this.friends);
     this.updateMyInfo(null);
+  }
+
+  public toString() {
+    var str= '';
+    for(var i of this.friends) {
+      str += i.name + ' / '
+    }
+    return str
+
   }
 
   // public findFriend(id){
