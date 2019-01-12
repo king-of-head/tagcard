@@ -113,7 +113,19 @@ export class DatabaseProvider {
         'Rich': ['super rich'],
       },
     });
-    this.addFriend({name: 'Ara0', gender: 'male', location: {state: 'CA', city: 'Santa Barbara',}, status: 'single', company: 'UCSB', tag: {'ACG': ['school', 'days'],},});
+    this.addFriend({
+      name: 'A',
+      gender: 'male',
+      location: {
+        state: 'CA',
+        city: 'Santa Barbara',
+      }, 
+      status: 'single', 
+      company: 'UCSB', 
+      tag: {
+        'ACG': ['school', 'days'],
+      },
+    });
     this.addFriend({name: 'Ara1', gender: 'male', location: {state: 'CA', city: 'Santa Barbara',}, status: 'single', company: 'UCSB', tag: {'ACG': ['school', 'days'],},});
     this.addFriend({name: 'Ara2', gender: 'male', location: {state: 'CA', city: 'Santa Barbara',}, status: 'single', company: 'UCSB', tag: {'ACG': ['school', 'days'],},});
     this.addFriend({name: 'Ara3', gender: 'male', location: {state: 'CA', city: 'Santa Barbara',}, status: 'single', company: 'UCSB', tag: {'ACG': ['school', 'days'],},});
