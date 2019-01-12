@@ -4,12 +4,14 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 import { IonicStorageModule } from '@ionic/storage';
+import { QRCodeModule } from 'angularx-qrcode';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { MyInfoPage } from '../pages/my-info/my-info';
 import { MyInfoEditPage } from '../pages/my-info-edit/my-info-edit';
 import { FriendsPage } from '../pages/friends/friends';
+import { ScannerPage } from '../pages/scanner/scanner';
 import { DatabaseProvider } from '../providers/database/database';
 
 @NgModule({
@@ -18,12 +20,14 @@ import { DatabaseProvider } from '../providers/database/database';
     HomePage,
     MyInfoPage,
     MyInfoEditPage,
-    FriendsPage
+    FriendsPage,
+    ScannerPage,
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    IonicStorageModule.forRoot()
+    IonicStorageModule.forRoot(),
+    QRCodeModule,
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -31,7 +35,8 @@ import { DatabaseProvider } from '../providers/database/database';
     HomePage,
     MyInfoPage,
     MyInfoEditPage,
-    FriendsPage
+    FriendsPage,
+    ScannerPage,
   ],
   providers: [
     StatusBar,

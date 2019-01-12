@@ -11,6 +11,12 @@
 
   <br/>
 
+  <!-- <img [src]="qrData" alt="Red dot" /> -->
+
+  <qrcode [qrdata]="qrData" [size]="256" [level]="'M'"></qrcode>
+  
+  <button ion-button small (click)="gotoScanner()"> scanner </button>
+
   <button ion-button small (click)="gotoMyInfo()"> my info </button>
   <!-- <br/> -->
   <button ion-button small (click)="gotoMyInfoEdit()"> my info edit </button>
