@@ -14,6 +14,7 @@ import { MyInfoEditPage } from '../pages/my-info-edit/my-info-edit';
 import { FriendsPage } from '../pages/friends/friends';
 import { ScannerPage } from '../pages/scanner/scanner';
 import { DatabaseProvider } from '../providers/database/database';
+import { ToStringPipe } from '../pages/friend-string.pipe'
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { DatabaseProvider } from '../providers/database/database';
     MyInfoEditPage,
     FriendsPage,
     ScannerPage,
+    ToStringPipe,
   ],
   imports: [
     BrowserModule,
