@@ -26,9 +26,5 @@ export class FriendsPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad FriendsPage');
   }
-  ngOnInit(){
-    while(this.databaseProvider.friends!=null){
-      myfriend =
-    }
-  }
+
 }
