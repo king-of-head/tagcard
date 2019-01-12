@@ -7,21 +7,19 @@
       </ion-buttons>
       <ion-title>Friends</ion-title>
       <ion-buttons right>
-        <button ion-button icon-only><ion-icon name="trash"></ion-icon></button>
+        <button ion-button icon-only><ion-icon name="trash" (click)="appeardelete()"></ion-icon></button>
       </ion-buttons>
     </ion-navbar>
   </ion-header> 
 
 <ion-content class="list-avatar-page">
     <ion-list>
-      <ion-item>
-        <div *ngFor="let friend of friends">
-        <h2>{{friends.name}}</h2>
-        <p></p>
+      <div *ngFor="let friend of databaseProvider.friends">
+        <ion-item>
+         <b>{{friend.name}}</b>
         <ion-note item-end></ion-note>
-        </div>
-      </ion-item>
-  
+        </ion-item>
+      </div>
       <ion-item>
         <ion-avatar item-start>
           <img src="assets/img/avatar-ts-buzz.png">

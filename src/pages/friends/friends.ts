@@ -17,8 +17,11 @@ import { DatabaseProvider} from '../../providers/database/database';
 export class FriendsPage {
 
   constructor(public navCtrl: NavController,public databaseProvider: DatabaseProvider) {
+    console.log(databaseProvider)
   }
-
+  public appeardelete(){
+    
+  }
   public gotoHomePage() {
     this.navCtrl.push(HomePage);
   }
