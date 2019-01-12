@@ -27,5 +27,13 @@ export class HomePage {
     this.navCtrl.push(FriendsPage);
   }
 
-    
+  public async f() {
+  }
+
+  // If first time, goto myInfoEdit page
+  ngOnInit() {
+    if(!this.databaseProvider.myInfo) {
+      this.navCtrl.push(MyInfoEditPage);
+    }
+  }
 }
