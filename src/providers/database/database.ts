@@ -146,7 +146,7 @@ export class DatabaseProvider {
   public toString() {
     var str= '';
     for(var i of this.friends) {
-      str += i.name + ' / '
+      str += i.id + ':' + i.name + ' / '
     }
     return str
 
