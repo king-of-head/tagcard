@@ -1,7 +1,7 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Ionic Blank
+      TAGCARD
     </ion-title>
   </ion-navbar>
 </ion-header>
@@ -9,22 +9,25 @@
 <ion-content padding>
   <p>TagCard! </p>
 
-  <br/>
+  <p>
+    <button ion-button outline icon-start (click)="gotoMyInfo()"> 
+      <ion-icon name='person'></ion-icon>
+      ME
+    </button>
+    <button ion-button outline icon-start (click)="gotoScanner()">
+      <ion-icon name='qr-scanner'></ion-icon>
+      SCAN
+    </button>
+    <button ion-button outline icon-start (click)="gotoFriends()">
+      <ion-icon name='people'></ion-icon>
+      FRIENDS
+    </button>
+  </p>
 
-  <!-- <img [src]="qrData" alt="Red dot" /> -->
 
-  <qrcode [qrdata]="qrData" [size]="256" [level]="'M'"></qrcode>
-  
-  <button ion-button small (click)="gotoScanner()"> scanner </button>
-
-  <button ion-button small (click)="gotoMyInfo()"> my info </button>
-  <!-- <br/> -->
   <button ion-button small (click)="gotoMyInfoEdit()"> my info edit </button>
   <!-- <br/> -->
-  <button ion-button small (click)="gotoFriends()"> friends </button>
-  <!-- <br/> -->
-  <button ion-button small (click)="f()"> f </button>
-
+ 
   <p>
     If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
   </p>

@@ -1,5 +1,5 @@
 {
-  "name": "tagcard",
+  "name": "main-page",
   "version": "0.0.1",
   "author": "Ionic Framework",
   "homepage": "http://ionicframework.com/",
@@ -43,7 +43,7 @@
     "@ionic/app-scripts": "3.2.1",
     "typescript": "~2.6.2"
   },
-  "description": "An Ionic project",
+  "description": "main page: An Ionic project",
   "cordova": {
     "plugins": {
       "cordova-plugin-whitelist": {},
@@ -59,4 +59,3 @@
       "android"
     ]
   }
-}
