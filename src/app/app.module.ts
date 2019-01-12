@@ -15,7 +15,7 @@ import { MyInfoEditPage } from '../pages/my-info-edit/my-info-edit';
 import { FriendsPage } from '../pages/friends/friends';
 import { ScannerPage } from '../pages/scanner/scanner';
 import { DatabaseProvider } from '../providers/database/database';
-import { RlTagInputModule } from 'angular2-tag-input';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -29,7 +29,6 @@ import { RlTagInputModule } from 'angular2-tag-input';
     BrowserModule,
     FormsModule,
     IonicModule.forRoot(MyApp),
-    RlTagInputModule,
     IonicStorageModule.forRoot(),
     QRCodeModule,
   ],
