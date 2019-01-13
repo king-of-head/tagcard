@@ -5,7 +5,8 @@ import { MyInfoEditPage } from '../my-info-edit/my-info-edit';
 import { FriendsPage } from '../friends/friends';
 import { ScannerPage } from '..//scanner/scanner';
 import { DatabaseProvider } from "../../providers/database/database";
-import { QRCodeModule } from 'angularx-qrcode';
+// import { QRCodeModule } from 'angularx-qrcode';
+import * as qr from 'qrcode-reader' // This is a function!!
 
 @Component({
   selector: 'page-home',
@@ -14,10 +15,13 @@ import { QRCodeModule } from 'angularx-qrcode';
 export class HomePage {
   qrData: String;
   friendStr: String;
+  logging: String;
+  imageModel: any;
 
   constructor(public navCtrl: NavController, public databaseProvider: DatabaseProvider) {  
     this.qrData = `https://github.com/king-of-head/tagcard`
     databaseProvider.setMyInfo();
+    this.logging = ''
   }
 
 
@@ -37,7 +41,24 @@ export class HomePage {
     this.navCtrl.push(FriendsPage);
   }
 
-
+  public processQr(event) {
+    this.logging = 'QR!'
+    console.log('imageModel')
+    console.log(event)
+    var file = event.target.files[0]
+    console.log(file)
+    console.log(qr['default'])
+    var qrInstance = new qr['default']()
+    console.log(qrInstance)
+    qrInstance.callback = (err, result) => {this.navCtrl.push(MyInfoPage, {info: result.result})}
+    
+    var reader = new FileReader();
+    reader.addEventListener('load', function() {
+      console.log('LOAD EVENTLISTENER')
+      qrInstance.decode(this.result);
+    }.bind(reader), false);
+    reader.readAsDataURL(file);
+  }
 
 
 
@@ -46,7 +67,10 @@ export class HomePage {
     await this.databaseProvider.load();
     if(!this.databaseProvider.myInfo) {
       this.navCtrl.push(MyInfoEditPage);
+    } else {
+      this.qrData = JSON.stringify(this.databaseProvider.myInfo)
     }
     this.friendStr = this.databaseProvider.toString();
+
   }
 }
