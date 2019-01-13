@@ -20,67 +20,67 @@
   <ion-list>
     <ion-item>
       <h6>
-        <font size="6">Name: {{ databaseProvider.myInfo.name }}</font>
+        <font size="6">Name: {{ info.name }}</font>
       </h6>
       <h6>
-        <font size="3">Gender: {{ databaseProvider.myInfo.gender }}
-          <ion-icon *ngIf="databaseProvider.myInfo.gender == 'male'" color="primary" name="male"></ion-icon>
-          <ion-icon *ngIf="databaseProvider.myInfo.gender == 'female'" color="primary" name="female"></ion-icon>
+        <font size="3">Gender: {{ info.gender }}
+          <ion-icon *ngIf="info.gender == 'male'" color="primary" name="male"></ion-icon>
+          <ion-icon *ngIf="info.gender == 'female'" color="primary" name="female"></ion-icon>
         </font>
       </h6>
     </ion-item>
     <ion-item>
       <h4>
-        <font size="4">Location: {{ databaseProvider.myInfo.location.city }},{{databaseProvider.myInfo.location.state}}</font>
+        <font size="4">Location: {{ info.location.city }},{{info.location.state}}</font>
       </h4>
     </ion-item>
     <ion-item>
       <h1>
-        <font size="4">Status: {{ databaseProvider.myInfo.status }}</font>
+        <font size="4">Status: {{ info.status }}</font>
       </h1>
     </ion-item>
     <ion-item>
       <h3>
-        <font size="4">Company: {{ databaseProvider.myInfo.company }}</font>
+        <font size="4">Company: {{ info.company }}</font>
       </h3>
     </ion-item>
     <ion-item>
       <h3>
-        <font size="4"><ion-icon name="logo-facebook"></ion-icon> {{ databaseProvider.myInfo.facebook }}</font>
+        <font size="4"><ion-icon name="logo-facebook"></ion-icon> {{ info.facebook }}</font>
       </h3>
     </ion-item>
     <ion-item>
       <h3>
-        <font size="4"><ion-icon name="logo-instagram"></ion-icon> {{ databaseProvider.myInfo.insta }}</font>
+        <font size="4"><ion-icon name="logo-instagram"></ion-icon> {{ info.insta }}</font>
       </h3>
     </ion-item>
     <ion-item>
       <h3>
-        <font size="4"><ion-icon name="logo-linkedin"></ion-icon> {{ databaseProvider.myInfo.linkedin }}</font>
+        <font size="4"><ion-icon name="logo-linkedin"></ion-icon> {{ info.linkedin }}</font>
       </h3>
     </ion-item>
     <ion-item>
       <h3>
-        <font size="4"><ion-icon name="logo-snapchat"></ion-icon> {{ databaseProvider.myInfo.snapchat }}</font>
+        <font size="4"><ion-icon name="logo-snapchat"></ion-icon> {{ info.snapchat }}</font>
       </h3>
     </ion-item>
     <ion-item>
       <h3>
-        <font size="4"><ion-icon name="logo-twitter"></ion-icon> {{ databaseProvider.myInfo.twitter }}</font>
+        <font size="4"><ion-icon name="logo-twitter"></ion-icon> {{ info.twitter }}</font>
       </h3>
     </ion-item>
     <ion-fab>
-      <button ion-fab color="vibrant">{{ databaseProvider.myInfo.tag[0][0] }}</button>
+      <button ion-fab color="vibrant">{{ info.tag[0][0] }}</button>
       <ion-fab-list>
-        <button ion-fab>{{ databaseProvider.myInfo.tag[0][1] }}</button>
-        <button ion-fab>{{ databaseProvider.myInfo.tag[0][2] }}</button>
+        <button ion-fab>{{ info.tag[0][1] }}</button>
+        <button ion-fab>{{ info.tag[0][2] }}</button>
       </ion-fab-list>
     </ion-fab>
     <ion-fab right="5px">
-      <button ion-fab color="vibrant">{{ databaseProvider.myInfo.tag[1][0] }}</button>
+      <button ion-fab color="vibrant">{{ info.tag[1][0] }}</button>
       <ion-fab-list>
-        <button ion-fab>{{ databaseProvider.myInfo.tag[1][1] }}</button>
-        <button ion-fab>{{ databaseProvider.myInfo.tag[1][2] }}</button>
+        <button ion-fab>{{ info.tag[1][1] }}</button>
+        <button ion-fab>{{ info.tag[1][2] }}</button>
       </ion-fab-list>
     </ion-fab>
   </ion-list>

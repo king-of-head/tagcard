@@ -25,8 +25,9 @@ export class MyInfoPage {
     // databaseProvider.setMyInfo();
     this.identity = navParams.data.identity
     if(this.identity == 'friend') {
+      console.log('navParams.data.info')
+      console.log(navParams.data.info)
       this.info = navParams.data.info
-      databaseProvider.addFriend(this.info)
     } else { 
       this.info = databaseProvider.myInfo
     }

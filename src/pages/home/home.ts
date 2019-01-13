@@ -50,9 +50,12 @@ export class HomePage {
     console.log(qr['default'])
     var qrInstance = new qr['default']()
     console.log(qrInstance)
-    qrInstance.callback = (err, result) => {this.navCtrl.push(MyInfoPage, {
-      info: JSON.parse(result.result),
-      identity: 'friend'
+    qrInstance.callback = (err, result) => {
+      var info = JSON.parse(result.result)
+      this.databaseProvider.addFriend(info)
+      this.navCtrl.push(MyInfoPage, {
+        info,
+        identity: 'friend'
     })}
     
     var reader = new FileReader();
@@ -62,7 +65,6 @@ export class HomePage {
     }.bind(reader), false);
     reader.readAsDataURL(file);
   }
-
 
 
   // If first time, goto myInfoEdit page

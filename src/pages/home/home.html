@@ -7,12 +7,18 @@
 </ion-header>
 
 <ion-content padding class="con">
-  {{logging}}
-  {{ databaseProvider.friends | toString }}
+  <!-- {{logging}} -->
+  <!-- {{ databaseProvider.friends | toString }} -->
   <!-- {{databaseProvider.toString()}} -->
   <qrcode [qrdata]="qrData" [size]="256" [level]="'M'"></qrcode>
   <p>
-    <button ion-button outline icon-start (click)="gotoMyInfo()"> 
+    <button ion-button outline icon-start (change)="processQr($event)" >
+      <ion-icon name='qr-scanner'></ion-icon>
+      SCAN 
+      <!-- <label for="upload-photo">Browse...</label> -->
+      <input type="file" placeholder="SCAN" accept="image/*">
+      </button>
+    <button ion-button outline icon-start (click)="gotoMyInfo()" style="width: 45%"> 
       <ion-icon name='person'></ion-icon>
       ME
     </button>
@@ -20,31 +26,23 @@
       <ion-icon name='qr-scanner'></ion-icon>
       SCAN
     </button> -->
-    <button ion-button outline icon-start (change)="processQr($event)">
-      <ion-icon name='qr-scanner'></ion-icon>
-      SCAN 
-      <!-- <label for="upload-photo">Browse...</label> -->
-      <input type="file" placeholder="SCAN" accept="image/*">
-    </button>
 
-    <button ion-button outline icon-start (click)="gotoFriends()">
+
+    <button ion-button outline icon-start (click)="gotoFriends()" style="width: 45%">
       <ion-icon name='people'></ion-icon>
       FRIENDS
     </button>
-    <button ion-button outline icon-start (click)="gotoMyInfoEdit()">
+    <!-- <button ion-button outline icon-start (click)="gotoMyInfoEdit()">
       <ion-icon name='list-box'></ion-icon>
       EDIT MY INFO
-    </button>
+    </button> -->
   </p>
 
 
-  <button ion-button small (click)="gotoMyInfoEdit()"> > my info edit </button>
+  <!-- <button ion-button small (click)="gotoMyInfoEdit()"> > my info edit </button> -->
   <!-- <br/> -->
-  <button ion-button small (click)="databaseProvider.fillFriend()"> fill </button>
-  <button ion-button small (click)="databaseProvider.clearFriend()"> clear </button>
-  <button ion-button small (click)="databaseProvider.setMyInfo()"> set me </button>
- 
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+  <!-- <button ion-button small (click)="databaseProvider.fillFriend()"> fill </button> -->
+  <!-- <button ion-button small (click)="databaseProvider.clearFriend()"> clear </button> -->
+  <!-- <button ion-button small (click)="databaseProvider.setMyInfo()"> set me </button> -->
+
 </ion-content>
