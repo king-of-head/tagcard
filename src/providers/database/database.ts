@@ -24,7 +24,7 @@ class MyData {
   }
   status: string;
   company: string;
-  tag: Object;
+  tag: string[] [];
   facebook: string;
   insta: string;
   linkedin: string;
@@ -43,8 +43,10 @@ class FriendData extends MyData {
 export class DatabaseProvider {
 
 
-  public friends: FriendData[];
-  public myInfo: MyData;
+  // public friends: FriendData[];
+  public friends: any;
+  // public myInfo: MyData;
+  public myInfo: any;
   public friendsId: number;
 
   // get friends() {
@@ -105,9 +107,8 @@ export class DatabaseProvider {
       },
       status: 'single',
       company: 'UCSB',
-      tag: {'ACG': ['school', 'days'],
-      },
-    });
+      tag: ['ACG', 'school', 'days'],
+       });
     this.addFriend({
       name: 'Bill Gates',
       gender: 'male',
@@ -130,19 +131,19 @@ export class DatabaseProvider {
       }, 
       status: 'single', 
       company: 'UCSB', 
-      tag: {
-        'ACG': ['school', 'days'],
-      },
+      tag: [
+        'ACG','school','days'
+      ]
     });
-    this.addFriend({name: 'Ara1', gender: 'male', location: {state: 'CA', city: 'Santa Barbara',}, status: 'single', company: 'UCSB', tag: {'ACG': ['school', 'days'],},});
-    this.addFriend({name: 'Ara2', gender: 'male', location: {state: 'CA', city: 'Santa Barbara',}, status: 'single', company: 'UCSB', tag: {'ACG': ['school', 'days'],},});
-    this.addFriend({name: 'Ara3', gender: 'male', location: {state: 'CA', city: 'Santa Barbara',}, status: 'single', company: 'UCSB', tag: {'ACG': ['school', 'days'],},});
-    this.addFriend({name: 'Ara4', gender: 'male', location: {state: 'CA', city: 'Santa Barbara',}, status: 'single', company: 'UCSB', tag: {'ACG': ['school', 'days'],},});
-    this.addFriend({name: 'Ara5', gender: 'male', location: {state: 'CA', city: 'Santa Barbara',}, status: 'single', company: 'UCSB', tag: {'ACG': ['school', 'days'],},});
-    this.addFriend({name: 'Ara6', gender: 'male', location: {state: 'CA', city: 'Santa Barbara',}, status: 'single', company: 'UCSB', tag: {'ACG': ['school', 'days'],},});
-    this.addFriend({name: 'Ara7', gender: 'male', location: {state: 'CA', city: 'Santa Barbara',}, status: 'single', company: 'UCSB', tag: {'ACG': ['school', 'days'],},});
-    this.addFriend({name: 'Ara8', gender: 'male', location: {state: 'CA', city: 'Santa Barbara',}, status: 'single', company: 'UCSB', tag: {'ACG': ['school', 'days'],},});
-    this.addFriend({name: 'Ara9', gender: 'male', location: {state: 'CA', city: 'Santa Barbara',}, status: 'single', company: 'UCSB', tag: {'ACG': ['school', 'days'],},});
+    this.addFriend({name: 'Ara1', gender: 'male', location: {state: 'CA', city: 'Santa Barbara',}, status: 'single', company: 'UCSB', tag: ['ACG' ,'school', 'days'],});
+    this.addFriend({name: 'Ara2', gender: 'male', location: {state: 'CA', city: 'Santa Barbara',}, status: 'single', company: 'UCSB', tag: ['ACG' ,'school', 'days'],});
+    this.addFriend({name: 'Ara3', gender: 'male', location: {state: 'CA', city: 'Santa Barbara',}, status: 'single', company: 'UCSB', tag: ['ACG' ,'school', 'days'],});
+    this.addFriend({name: 'Ara4', gender: 'male', location: {state: 'CA', city: 'Santa Barbara',}, status: 'single', company: 'UCSB', tag: ['ACG' ,'school', 'days'],});
+    this.addFriend({name: 'Ara5', gender: 'male', location: {state: 'CA', city: 'Santa Barbara',}, status: 'single', company: 'UCSB', tag: ['ACG' ,'school', 'days'],});
+    this.addFriend({name: 'Ara6', gender: 'male', location: {state: 'CA', city: 'Santa Barbara',}, status: 'single', company: 'UCSB', tag: ['ACG' ,'school', 'days'],});
+    this.addFriend({name: 'Ara7', gender: 'male', location: {state: 'CA', city: 'Santa Barbara',}, status: 'single', company: 'UCSB', tag: ['ACG' ,'school', 'days'],});
+    this.addFriend({name: 'Ara8', gender: 'male', location: {state: 'CA', city: 'Santa Barbara',}, status: 'single', company: 'UCSB', tag: ['ACG' ,'school', 'days'],});
+    this.addFriend({name: 'Ara9', gender: 'male', location: {state: 'CA', city: 'Santa Barbara',}, status: 'single', company: 'UCSB', tag: ['ACG' ,'school', 'days'],});
     console.log(this.friends)
   }
 
@@ -163,8 +164,8 @@ export class DatabaseProvider {
       },
       status: 'married',
       company: 'Microsoft',
-      tag: {'Rich':['super rich'],
-      },
+      tag: ['ACG' ,'school', 'days']
+      ,
       facebook: 'George Owell',
       insta: '@George.Owell',
       linkedin: 'None',

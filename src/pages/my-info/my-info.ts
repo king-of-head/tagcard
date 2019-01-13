@@ -22,10 +22,14 @@ export class MyInfoPage {
 //		this.jsonObject = JSON.parse(jsonData);
  // }
   constructor(public navCtrl: NavController, public databaseProvider: DatabaseProvider) {
+    databaseProvider.setMyInfo();
     console.log(databaseProvider);
     const object1 = databaseProvider.myInfo.tag;
-    console.log(Object.keys(object1));
-    const values = Object.keys(object1).map(key => object1[key]);
+    console.log('object1')
+    console.log(object1)
+    const key = console.log(Object.keys(object1));
+    
+    //console.log(object1.keys)
   }
   
   ionViewDidLoad() {
