@@ -10,7 +10,6 @@ import { QRCodeModule } from 'angularx-qrcode';
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
-
 })
 export class HomePage {
   qrData: String;
@@ -37,8 +36,9 @@ export class HomePage {
     this.navCtrl.push(FriendsPage);
   }
 
-  public async f() {
-  }
+
+
+
 
   // If first time, goto myInfoEdit page
   async ngOnInit() {
