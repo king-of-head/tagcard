@@ -8,6 +8,8 @@
 
 <ion-content padding>
   <p>TagCard! </p>
+  {{logging}}
+  <input type="file" accept="image/*">
   {{ databaseProvider.friends | toString }}
   <!-- {{databaseProvider.toString()}} -->
   <qrcode [qrdata]="qrData" [size]="256" [level]="'M'"></qrcode>
@@ -16,10 +18,17 @@
       <ion-icon name='person'></ion-icon>
       ME
     </button>
-    <button ion-button outline icon-start (click)="gotoScanner()">
+    <!-- <button ion-button outline icon-start (click)="gotoScanner()">
       <ion-icon name='qr-scanner'></ion-icon>
       SCAN
+    </button> -->
+    <button ion-button outline icon-start (change)="processQr($event)">
+      <ion-icon name='qr-scanner'></ion-icon>
+      SCAN 
+      <!-- <label for="upload-photo">Browse...</label> -->
+      <input type="file" placeholder="SCAN" accept="image/*">
     </button>
+
     <button ion-button outline icon-start (click)="gotoFriends()">
       <ion-icon name='people'></ion-icon>
       FRIENDS
