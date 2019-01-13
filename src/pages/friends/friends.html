@@ -1,0 +1,27 @@
+<ion-nav [root]="rootPage"></ion-nav>
+<ion-header>
+    <ion-navbar color="primary">
+      <ion-buttons left>
+          <button ion-button icon-only>
+          </button>
+      </ion-buttons>
+      <ion-title>Friends</ion-title>
+      <ion-buttons right>
+        <button ion-button icon-only><ion-icon name="trash" (click)="appeardelete()"></ion-icon></button>
+      </ion-buttons>
+    </ion-navbar>
+  </ion-header> 
+
+<ion-content class="list-avatar-page">
+    <ion-list>
+      <div *ngFor="let friend of databaseProvider.friends" (click)="gotoFriend(friend)">
+        <ion-item>
+          <b>{{friend.name}}</b>
+          <!-- <button ion-button clear item-end>View</button> -->
+          <!-- <ion-note item-end> {{friend.date.getMonth()+1}}/{{friend.date.getDate()}} </ion-note> -->
+        </ion-item>
+      </div>
+      
+    </ion-list>
+  
+  </ion-content>
