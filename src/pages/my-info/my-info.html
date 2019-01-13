@@ -5,14 +5,39 @@
   Ionic pages and navigation.
 -->
 <ion-header>
+    <ion-navbar color="primary">
+      <ion-buttons left>
+          <button ion-button icon-only>
+          </button>
+      </ion-buttons>
+      <ion-title>Information</ion-title>
+      <ion-buttons right>
+        <button ion-button icon-only><ion-icon name="md-create"></ion-icon></button>
+      </ion-buttons>
+    </ion-navbar>
+  </ion-header> 
 
-  <ion-navbar>
-    <ion-title>my-info</ion-title>
-  </ion-navbar>
-
-</ion-header>
-
-
-<ion-content padding>
-
+  <ion-content class="list-avatar-page">
+      <ion-list>
+          <ion-item>
+           <h6><font size ="6">Name: {{databaseProvider.friends[0].name}}</font></h6>
+           <h6><font size ="3">Gender: {{databaseProvider.friends[0].gender}}<p item-end *ngIf = "databaseProvider.friends[0].gender == 'male'"><ion-icon color="primary" name="male"></ion-icon></p>
+            <p item-end *ngIf = "databaseProvider.friends[0].gender == 'female'"><ion-icon color="danger" name="female"></ion-icon></p></font></h6>
+          </ion-item>
+          <ion-item>
+            <h4><font size="4">Location: {{databaseProvider.friends[0].location.city}},{{databaseProvider.friends[0].location.state}}</font></h4>
+          </ion-item>
+          <ion-item>
+            <h1><font size="4">Status: {{databaseProvider.friends[0].status}}</font></h1>
+          </ion-item>
+          <ion-item>
+            <h3><font size="4">Company: {{databaseProvider.friends[0].company}}</font></h3>
+          </ion-item>
+          <ion-item>
+            <h5><font size="4">Tag: </font></h5>
+            <div *ngFor = "let key of object1.keys">
+            <h1><button ion-button color="defult" round>{{Object1.key[0]}} </button></h1>
+            </div>
+          </ion-item>
+      </ion-list>
 </ion-content>

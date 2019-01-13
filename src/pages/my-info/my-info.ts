@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { DatabaseProvider}from '../../providers/database/database'
 
 /**
  * Generated class for the MyInfoPage page.
@@ -14,10 +15,19 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'my-info.html',
 })
 export class MyInfoPage {
+  public jsonObject: any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+ // private retrieveJson(){
+ //   let jsonData: string = this.MyInfoPage.getJsonString();
+//		this.jsonObject = JSON.parse(jsonData);
+ // }
+  constructor(public navCtrl: NavController, public databaseProvider: DatabaseProvider) {
+    console.log(databaseProvider);
+    const object1 = databaseProvider.myInfo.tag;
+    console.log(Object.keys(object1));
+    console.log(Object.values(object1));
   }
-
+  
   ionViewDidLoad() {
     console.log('ionViewDidLoad MyInfoPage');
   }

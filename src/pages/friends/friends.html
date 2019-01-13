@@ -17,6 +17,7 @@
       <div *ngFor="let friend of databaseProvider.friends">
         <ion-item>
          <b>{{friend.name}}</b>
+         <button ion-button clear item-end>View</button>
         <ion-note item-end></ion-note>
         </ion-item>
       </div>

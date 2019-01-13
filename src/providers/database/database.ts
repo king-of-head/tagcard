@@ -89,7 +89,7 @@ export class DatabaseProvider {
     console.log('FILL')
     this.addFriend({
       name: 'Ara',
-      gender: 'male',
+      gender: 'female',
       location: {
         state: 'CA',
         city: 'Santa Barbara',

@@ -5,7 +5,7 @@ import { MyInfoEditPage } from '../my-info-edit/my-info-edit';
 import { FriendsPage } from '../friends/friends';
 import { ScannerPage } from '..//scanner/scanner';
 import { DatabaseProvider } from "../../providers/database/database";
-import { QRCodeModule } from 'angularx-qrcode';
+//import { QRCodeModule } from 'angularx-qrcode';
 
 @Component({
   selector: 'page-home',
