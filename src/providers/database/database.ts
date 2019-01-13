@@ -167,7 +167,7 @@ export class DatabaseProvider {
     console.log('setMyInfo')
     this.myInfo = {
       name: 'George Owell',
-      gender: 'male',
+      gender:"male",
       location: {
         state: 'NY',
         city: 'New York City',

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { DatabaseProvider}from '../../providers/database/database'
-
+import { DatabaseProvider}from '../../providers/database/database';
+import {MyInfoEditPage} from '../../pages/my-info-edit/my-info-edit';
 /**
  * Generated class for the MyInfoPage page.
  *
