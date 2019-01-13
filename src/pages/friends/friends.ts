@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { HomePage } from '../home/home';
 import { DatabaseProvider} from '../../providers/database/database';
+import { MyInfoPage } from '../my-info/my-info'
 /**
  * Generated class for the MyInfoPage page.
  *
@@ -24,6 +25,17 @@ export class FriendsPage {
   }
   public gotoHomePage() {
     this.navCtrl.push(HomePage);
+  }
+
+  public gotoFriend(friend) {
+    console.log('gotoFriend')
+    console.log(friend)
+    this.navCtrl.push(MyInfoPage, {
+      info: friend,
+      identity: 'friend'
+    })
+    // console.log(this.navCtrl)
+    
   }
   
   ionViewDidLoad() {

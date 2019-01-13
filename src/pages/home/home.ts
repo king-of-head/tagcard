@@ -5,7 +5,7 @@ import { MyInfoEditPage } from '../my-info-edit/my-info-edit';
 import { FriendsPage } from '../friends/friends';
 import { ScannerPage } from '..//scanner/scanner';
 import { DatabaseProvider } from "../../providers/database/database";
-//import { QRCodeModule } from 'angularx-qrcode';
+import { QRCodeModule } from 'angularx-qrcode';
 
 @Component({
   selector: 'page-home',
@@ -17,6 +17,7 @@ export class HomePage {
 
   constructor(public navCtrl: NavController, public databaseProvider: DatabaseProvider) {  
     this.qrData = `https://github.com/king-of-head/tagcard`
+    databaseProvider.setMyInfo();
   }
 
 
@@ -25,7 +26,7 @@ export class HomePage {
   }
 
   public gotoMyInfo() {
-    this.navCtrl.push(MyInfoPage);
+    this.navCtrl.push(MyInfoPage, {identity: 'me'});
   }
 
   public gotoMyInfoEdit() {

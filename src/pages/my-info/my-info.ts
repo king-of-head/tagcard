@@ -15,21 +15,27 @@ import { DatabaseProvider}from '../../providers/database/database'
   templateUrl: 'my-info.html',
 })
 export class MyInfoPage {
-  public jsonObject: any;
+  public info: any;
+  public identity: string;
 
- // private retrieveJson(){
- //   let jsonData: string = this.MyInfoPage.getJsonString();
-//		this.jsonObject = JSON.parse(jsonData);
- // }
-  constructor(public navCtrl: NavController, public databaseProvider: DatabaseProvider) {
-    databaseProvider.setMyInfo();
-    console.log(databaseProvider);
-    const object1 = databaseProvider.myInfo.tag;
-    console.log('object1')
-    console.log(object1)
-    const key = console.log(Object.keys(object1));
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, public databaseProvider: DatabaseProvider) {
+    // databaseProvider.setMyInfo();
+    this.identity = navParams.data.identity
+    if(this.identity == 'friend') {
+      this.info = navParams.data.info
+    } else { 
+      this.info = databaseProvider.myInfo
+    }
+    if(!this.info) this.info = {} // in case
     
-    //console.log(object1.keys)
+    // console.log(databaseProvider);
+    // const object1 = databaseProvider.myInfo.tag;
+    // console.log('object1')
+    // console.log(object1)
+    // const key = console.log(Object.keys(object1));
+    
+    // //console.log(object1.keys)
   }
   
   ionViewDidLoad() {

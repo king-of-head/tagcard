@@ -14,11 +14,11 @@
 
 <ion-content class="list-avatar-page">
     <ion-list>
-      <div *ngFor="let friend of databaseProvider.friends">
+      <div *ngFor="let friend of databaseProvider.friends" (click)="gotoFriend(friend)">
         <ion-item>
-         <b>{{friend.name}}</b>
-         <button ion-button clear item-end>View</button>
-        <ion-note item-end></ion-note>
+          <b>{{friend.name}}</b>
+          <!-- <button ion-button clear item-end>View</button> -->
+          <ion-note item-end> {{friend.date.getMonth()+1}}/{{friend.date.getDate()}} </ion-note>
         </ion-item>
       </div>
       

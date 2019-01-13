@@ -10,6 +10,7 @@
   <p>TagCard! </p>
   {{ databaseProvider.friends | toString }}
   <!-- {{databaseProvider.toString()}} -->
+  <qrcode [qrdata]="qrData" [size]="256" [level]="'M'"></qrcode>
   <p>
     <button ion-button outline icon-start (click)="gotoMyInfo()"> 
       <ion-icon name='person'></ion-icon>

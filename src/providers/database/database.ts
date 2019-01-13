@@ -78,6 +78,7 @@ export class DatabaseProvider {
 
   public addFriend(newFriend) {
     newFriend.id = this.friendsId;
+    newFriend.date = new Date();
     this.friends.push(newFriend);
     this.friends = this.friends.map(x => x) // * magic to trigger update
     this.friendsId += 1;
@@ -95,46 +96,54 @@ export class DatabaseProvider {
     this.storage.set('myInfo', this.myInfo);
   }
 
+  // public randomFriend() {
+  //   var nameOptions = ['Noah', 'Liam', 'Jackson', 'Lucas', 'Logan', 'Benjamin', 'Jacob', 'William', 'James']
+  //   return {
+  //     name: Math.floor(100)
+  //   }
+
+  // }
+
 
   public fillFriend() {
     console.log('FILL')
-    this.addFriend({
-      name: 'Ara',
-      gender: 'female',
-      location: {
-        state: 'CA',
-        city: 'Santa Barbara',
-      },
-      status: 'single',
-      company: 'UCSB',
-      tag: ['ACG', 'school', 'days'],
-       });
-    this.addFriend({
-      name: 'Bill Gates',
-      gender: 'male',
-      location: {
-        state: 'NY',
-        city: 'New York City',
-      },
-      status: 'married',
-      company: 'Microsoft',
-      tag: {
-        'Rich': ['super rich'],
-      },
-    });
-    this.addFriend({
-      name: 'A',
-      gender: 'male',
-      location: {
-        state: 'CA',
-        city: 'Santa Barbara',
-      }, 
-      status: 'single', 
-      company: 'UCSB', 
-      tag: [
-        'ACG','school','days'
-      ]
-    });
+    // this.addFriend({
+    //   name: 'Ara',
+    //   gender: 'female',
+    //   location: {
+    //     state: 'CA',
+    //     city: 'Santa Barbara',
+    //   },
+    //   status: 'single',
+    //   company: 'UCSB',
+    //   tag: ['ACG', 'school', 'days'],
+    //    });
+    // this.addFriend({
+    //   name: 'Bill Gates',
+    //   gender: 'male',
+    //   location: {
+    //     state: 'NY',
+    //     city: 'New York City',
+    //   },
+    //   status: 'married',
+    //   company: 'Microsoft',
+    //   tag: {
+    //     'Rich': ['super rich'],
+    //   },
+    // });
+    // this.addFriend({
+    //   name: 'A',
+    //   gender: 'male',
+    //   location: {
+    //     state: 'CA',
+    //     city: 'Santa Barbara',
+    //   }, 
+    //   status: 'single', 
+    //   company: 'UCSB', 
+    //   tag: [
+    //     'ACG','school','days'
+    //   ]
+    // });
     this.addFriend({name: 'Ara1', gender: 'male', location: {state: 'CA', city: 'Santa Barbara',}, status: 'single', company: 'UCSB', tag: ['ACG' ,'school', 'days'],});
     this.addFriend({name: 'Ara2', gender: 'male', location: {state: 'CA', city: 'Santa Barbara',}, status: 'single', company: 'UCSB', tag: ['ACG' ,'school', 'days'],});
     this.addFriend({name: 'Ara3', gender: 'male', location: {state: 'CA', city: 'Santa Barbara',}, status: 'single', company: 'UCSB', tag: ['ACG' ,'school', 'days'],});
@@ -155,6 +164,7 @@ export class DatabaseProvider {
   }
 
   public async setMyInfo() {
+    console.log('setMyInfo')
     this.myInfo = {
       name: 'George Owell',
       gender: 'male',
@@ -164,8 +174,7 @@ export class DatabaseProvider {
       },
       status: 'married',
       company: 'Microsoft',
-      tag: [['ACG' ,'school','days'],['Movie','Crime','Adult']]
-            ,
+      tag: [['ACG' ,'school','days'],['Movie','Crime','Adult']],
       facebook: 'George Owell',
       insta: '@George.Owell',
       linkedin: 'None',
