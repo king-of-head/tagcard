@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>myInfoEdit</ion-title>
+    <ion-title>Edit My Info</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -123,15 +123,15 @@
 
 <ion-item>
 
+    <ion-icon name="book" item-start></ion-icon>
+    <ion-label color="primary"> School </ion-label>
+    <ion-input [(ngModel)]="school" placeholder="School" max="20"></ion-input>
+     </ion-item>
+
+<ion-item>
         <ion-icon name="briefcase" item-start></ion-icon>
        <ion-label color="primary"> Company </ion-label>
        <ion-input [(ngModel)]="company" placeholder="Company" max="20"></ion-input>
-     </ion-item>
-     <ion-item>
-
-        <ion-icon name="book" item-start></ion-icon>
-       <ion-label color="primary"> School </ion-label>
-       <ion-input [(ngModel)]="school" placeholder="School" max="20"></ion-input>
      </ion-item>
 
 <ion-item>
