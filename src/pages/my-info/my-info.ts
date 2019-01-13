@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { DatabaseProvider}from '../../providers/database/database'
-
+import { DatabaseProvider}from '../../providers/database/database';
+import {MyInfoEditPage} from '../../pages/my-info-edit/my-info-edit';
 /**
  * Generated class for the MyInfoPage page.
  *
@@ -16,7 +16,9 @@ import { DatabaseProvider}from '../../providers/database/database'
 })
 export class MyInfoPage {
   public jsonObject: any;
-
+  public gotoMyInfoEdit() {
+    this.navCtrl.push(MyInfoEditPage);
+  }
  // private retrieveJson(){
  //   let jsonData: string = this.MyInfoPage.getJsonString();
 //		this.jsonObject = JSON.parse(jsonData);
@@ -24,11 +26,6 @@ export class MyInfoPage {
   constructor(public navCtrl: NavController, public databaseProvider: DatabaseProvider) {
     databaseProvider.setMyInfo();
     console.log(databaseProvider);
-    const object1 = databaseProvider.myInfo.tag;
-    console.log('object1')
-    console.log(object1)
-    const key = console.log(Object.keys(object1));
-    
     //console.log(object1.keys)
   }
   

@@ -12,7 +12,7 @@
       </ion-buttons>
       <ion-title>Information</ion-title>
       <ion-buttons right>
-        <button ion-button icon-only><ion-icon name="md-create"></ion-icon></button>
+        <button ion-button icon-only (click)="gotoMyInfoEdit()"><ion-icon name="md-create"></ion-icon></button>
       </ion-buttons>
     </ion-navbar>
   </ion-header> 
@@ -21,11 +21,11 @@
       <ion-list>
           <ion-item>
            <h6><font size ="6">Name: {{databaseProvider.myInfo.name}}</font></h6>
-           <h6><font size ="3">Gender: {{databaseProvider.myInfo.gender}}<p item-end *ngIf = "databaseProvider.friends[0].gender == 'male'"><ion-icon color="primary" name="male"></ion-icon></p>
+           <h6><font size ="3">Gender: {{databaseProvider.myInfo.gender}}<p item-end *ngIf = "databaseProvider.myInfo.gender == 'male'"><ion-icon color="primary" name="male"></ion-icon></p>
             <p item-end *ngIf = "databaseProvider.myInfo.gender == 'female'"><ion-icon color="danger" name="female"></ion-icon></p></font></h6>
           </ion-item>
           <ion-item>
-            <h4><font size="4">Location: {{databaseProvider.myInfo.location.city}},{{databaseProvider.friends[0].location.state}}</font></h4>
+            <h4><font size="4">Location: {{databaseProvider.myInfo.location.city}},{{databaseProvider.myInfo.location.state}}</font></h4>
           </ion-item>
           <ion-item>
             <h1><font size="4">Status: {{databaseProvider.myInfo.status}}</font></h1>

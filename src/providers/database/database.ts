@@ -100,7 +100,7 @@ export class DatabaseProvider {
     console.log('FILL')
     this.addFriend({
       name: 'Ara',
-      gender: 'female',
+      gender: 'male',
       location: {
         state: 'CA',
         city: 'Santa Barbara',
@@ -157,7 +157,7 @@ export class DatabaseProvider {
   public async setMyInfo() {
     this.myInfo = {
       name: 'George Owell',
-      gender: 'male',
+      gender:"male",
       location: {
         state: 'NY',
         city: 'New York City',
