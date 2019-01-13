@@ -164,8 +164,8 @@ export class DatabaseProvider {
       },
       status: 'married',
       company: 'Microsoft',
-      tag: ['ACG' ,'school', 'days']
-      ,
+      tag: [['ACG' ],['school'],['days'] ]
+            ,
       facebook: 'George Owell',
       insta: '@George.Owell',
       linkedin: 'None',
