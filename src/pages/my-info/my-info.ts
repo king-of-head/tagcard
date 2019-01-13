@@ -17,7 +17,9 @@ import {MyInfoEditPage} from '../../pages/my-info-edit/my-info-edit';
 export class MyInfoPage {
   public info: any;
   public identity: string;
-
+  public gotoedit(){
+    this.navCtrl.push(MyInfoEditPage);
+  }
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public databaseProvider: DatabaseProvider) {
     // databaseProvider.setMyInfo();

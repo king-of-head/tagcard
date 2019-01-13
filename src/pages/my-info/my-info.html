@@ -9,8 +9,8 @@
     <ion-buttons left> <button ion-button icon-only></button> </ion-buttons>
     <ion-title>Information</ion-title>
     <ion-buttons right>
-      <button ion-button icon-only *ngIf="identity == 'me'">
-        <ion-icon name="md-create"></ion-icon>
+      <button ion-button icon-only *ngIf="identity == 'me'"(click)="gotoedit()">
+        <ion-icon name="md-create" ></ion-icon>
       </button>
     </ion-buttons>
   </ion-navbar>
