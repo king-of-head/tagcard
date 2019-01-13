@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { DatabaseProvider } from "../../providers/database/database";
-
+import {MyInfoPage} from '../my-info/my-info';
 
 /**
  * Generated class for the MyInfoEditPage page.
@@ -34,8 +34,8 @@ export class MyInfoEditPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad MyInfoEditPage');
   }
-  addInfo(){
-
+  public yourFancyButton(){
+  this.navCtrl.push(MyInfoPage);
   }
 
 }
