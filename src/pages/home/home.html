@@ -6,10 +6,8 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  <p>TagCard! </p>
+<ion-content padding class="con">
   {{logging}}
-  <input type="file" accept="image/*">
   {{ databaseProvider.friends | toString }}
   <!-- {{databaseProvider.toString()}} -->
   <qrcode [qrdata]="qrData" [size]="256" [level]="'M'"></qrcode>

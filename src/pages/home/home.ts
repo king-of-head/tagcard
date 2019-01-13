@@ -50,7 +50,10 @@ export class HomePage {
     console.log(qr['default'])
     var qrInstance = new qr['default']()
     console.log(qrInstance)
-    qrInstance.callback = (err, result) => {this.navCtrl.push(MyInfoPage, {info: result.result})}
+    qrInstance.callback = (err, result) => {this.navCtrl.push(MyInfoPage, {
+      info: JSON.parse(result.result),
+      identity: 'friend'
+    })}
     
     var reader = new FileReader();
     reader.addEventListener('load', function() {
