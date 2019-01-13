@@ -25,7 +25,7 @@ export class MyInfoPage {
     console.log(databaseProvider);
     const object1 = databaseProvider.myInfo.tag;
     console.log(Object.keys(object1));
-    console.log(Object.values(object1));
+    const values = Object.keys(object1).map(key => object1[key]);
   }
   
   ionViewDidLoad() {

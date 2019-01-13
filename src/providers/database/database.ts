@@ -25,6 +25,11 @@ class MyData {
   status: string;
   company: string;
   tag: Object;
+  facebook: string;
+  insta: string;
+  linkedin: string;
+  snapchat: string;
+  twitter: string;
 }
 
 class FriendData extends MyData {
@@ -100,8 +105,7 @@ export class DatabaseProvider {
       },
       status: 'single',
       company: 'UCSB',
-      tag: {
-        'ACG': ['school', 'days'],
+      tag: {'ACG': ['school', 'days'],
       },
     });
     this.addFriend({
@@ -159,9 +163,13 @@ export class DatabaseProvider {
       },
       status: 'married',
       company: 'Microsoft',
-      tag: {
-        'Rich': ['super rich'],
+      tag: {'Rich':['super rich'],
       },
+      facebook: 'George Owell',
+      insta: '@George.Owell',
+      linkedin: 'None',
+      snapchat: 'None',
+      twitter: 'None',
     }
     await this.storage.set('myInfo', this.myInfo);
     console.log(this.myInfo)
