@@ -8,8 +8,8 @@
 
 <ion-content padding>
   <p>TagCard! </p>
-  {{ friendStr }}
-
+  {{ databaseProvider.friends | toString }}
+  <!-- {{databaseProvider.toString()}} -->
   <p>
     <button ion-button outline icon-start (click)="gotoMyInfo()"> 
       <ion-icon name='person'></ion-icon>
@@ -26,8 +26,11 @@
   </p>
 
 
-  <button ion-button small (click)="gotoMyInfoEdit()"> my info edit </button>
+  <button ion-button small (click)="gotoMyInfoEdit()"> > my info edit </button>
   <!-- <br/> -->
+  <button ion-button small (click)="databaseProvider.fillFriend()"> fill </button>
+  <button ion-button small (click)="databaseProvider.clearFriend()"> clear </button>
+  <button ion-button small (click)="databaseProvider.setMyInfo()"> set me </button>
  
   <p>
     If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.

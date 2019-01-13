@@ -50,6 +50,7 @@ export class DatabaseProvider {
     console.log('Hello DatabaseProvider Provider');
   }
   public async load() {
+    console.log('LOAD:')
     // this.storage.get('friends').then((val) => {
     //   this.friends = val;
     // })
@@ -64,11 +65,14 @@ export class DatabaseProvider {
     this.friendsId = await this.storage.get('friendsId')
     if(this.friendsId == null) this.friendsId = 0
     this.myInfo = await this.storage.get('myInfo')
+    console.log(this.friends)
+    console.log(this.friendsId)
   }
 
   public addFriend(newFriend) {
     newFriend.id = this.friendsId;
     this.friends.push(newFriend);
+    this.friends = this.friends.map(x => x) // * magic to trigger update
     this.friendsId += 1;
     this.storage.set('friends', this.friends);
     this.storage.set('friendsId', this.friendsId);
@@ -135,12 +139,32 @@ export class DatabaseProvider {
     this.addFriend({name: 'Ara7', gender: 'male', location: {state: 'CA', city: 'Santa Barbara',}, status: 'single', company: 'UCSB', tag: {'ACG': ['school', 'days'],},});
     this.addFriend({name: 'Ara8', gender: 'male', location: {state: 'CA', city: 'Santa Barbara',}, status: 'single', company: 'UCSB', tag: {'ACG': ['school', 'days'],},});
     this.addFriend({name: 'Ara9', gender: 'male', location: {state: 'CA', city: 'Santa Barbara',}, status: 'single', company: 'UCSB', tag: {'ACG': ['school', 'days'],},});
+    console.log(this.friends)
   }
 
-  public async clear(){
-    this.friends = null;
+  public async clearFriend(){
+    this.friends = [];
     await this.storage.set('friends', this.friends);
     this.updateMyInfo(null);
+    console.log(this.friends)
+  }
+
+  public async setMyInfo() {
+    this.myInfo = {
+      name: 'George Owell',
+      gender: 'male',
+      location: {
+        state: 'NY',
+        city: 'New York City',
+      },
+      status: 'married',
+      company: 'Microsoft',
+      tag: {
+        'Rich': ['super rich'],
+      },
+    }
+    await this.storage.set('myInfo', this.myInfo);
+    console.log(this.myInfo)
   }
 
   public toString() {
@@ -151,6 +175,13 @@ export class DatabaseProvider {
     return str
 
   }
+
+
+  // !!! Problem: 
+  // before using magic
+  // Pipe update does not respond to fill()
+  // only respond to clear()
+  // guess: update only triggered by change of reference
 
   // public findFriend(id){
   //   for(var i of this.friends) {
